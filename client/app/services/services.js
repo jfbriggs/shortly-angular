@@ -9,7 +9,11 @@ angular.module('shortly.services', [])
     })
     .then(function(resp) {
       console.log('Response data:', resp.data);
-      return resp.data;
+      var dataArray = resp.data;
+      dataArray.sort(function(link1, link2) {
+        return link2.visits - link1.visits;
+      });
+      return dataArray;
     });
   };
 

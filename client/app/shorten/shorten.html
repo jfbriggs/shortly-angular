@@ -1,9 +1,23 @@
-<div id='container'>
-  <form name='addLinkForm' ng-submit='addLink()'>
-    <input type='text' ng-model='link.url'>
-    <button>Add</button>
-  </form>
-
+<div class='navigation'>
+  <ul>
+    <li><a href='#/links' class='index'>All Links</a></li>
+    <li><a href='#/shorten' class='create'>Shorten</a></li>
+  </ul>
+  <a href='#/logout' class='logout'>Logout</a>
 </div>
+
+<div id='container'>
+  <div class='creator'>
+    <form ng-submit='addLink()'>
+        <input class='text' type='text' name='url' ng-model='link.url'>
+        <input type='submit' value='Shorten'>
+    </form>
+    <img class='spinner' src='/assets/spiffygif_46x46.gif'>
+    <div class='message'></div>
+  </div>
+</div>
+
+
+
 
 
